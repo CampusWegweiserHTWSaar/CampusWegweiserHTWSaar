@@ -1,0 +1,577 @@
+/* Font Awesome einbinden */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Allgemeine Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-image: url('CampusRotenbühl.jpeg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.slogan {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Navigation */
+.navbar {
+  margin-top: 45px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: #ffa500; /* Orange hinterlegt */
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: #e69500; /* Dunkleres Orange beim Hover */
+}
+
+/* Dropdown-Menü */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 24px;
+  color: #fff;
+  background-color: #bcbcbc; /* Grau */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropbtn i {
+  font-size: 24px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Suchleiste */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 200px; /* Kleiner gemacht */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.search-bar input {
+  border: none;
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+  background-color: #ffa500;
+  border: none;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+
+#blumenstraeusse {
+  padding: 30px 0;
+  background-color: #f0f0f0; /* Helle Hintergrundfarbe */
+  color: #333; /* Dunklerer Text */
+  text-align: center; /* Zentrierte Ausrichtung des Abschnitts */
+}
+
+#blumenstraeusse h2 {
+  font-weight: bold; /* Dicker Text für die Überschrift */
+  color: #555; /* Dunklerer Text */
+
+  /* Mehr Farbe hinzugefügt */
+  background-image: linear-gradient(to right, #ff5b94, #ffc03d, #9dff69);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Registrierungsformular und Anmeldeformular */
+.registration-form,
+.login-form {
+  margin: 50px auto;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form h2,
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.registration-form .form-row,
+.login-form .form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.registration-form .form-row label,
+.login-form .form-row label {
+  flex: 0 0 120px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.registration-form .form-row input,
+.login-form .form-row input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.registration-form .form-row input[type="submit"],
+.login-form .form-row input[type="submit"] {
+  background-color: #ffa500;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.registration-form .form-row input[type="submit"]:hover,
+.login-form .form-row input[type="submit"]:hover {
+  background-color: #e69500;
+}
+
+/* Hinzugefügt: Stil für Anmeldeformular-Felder wie Registrierungsformular-Felder */
+.login-form .form-row input[type="text"],
+.login-form .form-row input[type="email"],
+.login-form .form-row input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-image: url('Blumen.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.slogan {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Navigation */
+.navbar {
+  margin-top: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  background-color: #ffa500; /* Orange hinterlegt */
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: #e69500; /* Dunkleres Orange beim Hover */
+}
+
+/* Dropdown-Menü */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 24px;
+  color: #fff;
+  background-color: #bcbcbc; /* Grau */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropbtn i {
+  font-size: 24px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Suchleiste */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 200px; /* Kleiner gemacht */
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.search-bar input {
+  border: none;
+  padding: 8px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+  background-color: #ffa500;
+  border: none;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+#blumenstraeusse {
+  padding: 30px 0;
+  background-color: #f0f0f0; /* Helle Hintergrundfarbe */
+  color: #333; /* Dunklerer Text */
+  text-align: center; /* Zentrierte Ausrichtung des Abschnitts */
+}
+
+#blumenstraeusse h2 {
+  font-weight: bold; /* Dicker Text für die Überschrift */
+  color: #555; /* Dunklerer Text */
+
+  /* Mehr Farbe hinzugefügt */
+  background-image: linear-gradient(to right, #ff5b94, #ffc03d, #9dff69);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Produkte */
+.product-section {
+  padding: 50px 0;
+}
+
+.product-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.product img {
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.product p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  color: #ff5b94;
+}
+
+.add-to-cart-btn {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e69500;
+}
+
+/* Produkte */
+.product-section {
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  flex: 0 0 calc(25% - 30px);
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.product p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.product-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  color: #ff5b94;
+}
+
+.add-to-cart-btn {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e69500;
+}
+
+/* Hover-Effekt für Produkte */
+.product:hover {
+  transform: translateY(-5px);
+}
+/* Stile für die Specials */
+
+.hero {
+  background-color: #ff9900;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  margin-top: 0;
+}
+
+.dark-orange-bg {
+  background-color: #ff9900;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.special-image {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Stile für das Feld der telefonischen Bestellung */
+
+#telefonische-bestellung {
+  background-color: #f2f2f2;
+  padding: 40px 0;
+  text-align: center;
+}
+
+#telefonische-bestellung h2 {
+  margin-top: 0;
+}

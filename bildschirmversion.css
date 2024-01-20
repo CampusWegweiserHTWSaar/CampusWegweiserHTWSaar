@@ -1,0 +1,85 @@
+/* bildschirmversion.css */
+
+/* Modernes Styling für die Produktseite - Apple-inspiriert */
+.product-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px; /* Mehr Platz zwischen den Produkten */
+  justify-items: center; /* Produkte horizontal zentrieren */
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  padding: 20px;
+  border: 1px solid #e5e5e5; /* Hellgrauer Rahmen */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  background-color: #fff; /* Weißer Hintergrund */
+}
+
+.product img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333; /* Dunkelgraue Schriftfarbe */
+}
+
+.product-price {
+  font-size: 20px;
+  color: #00cc66; /* Grün für den Preis */
+}
+
+.add-to-cart-btn {
+  background-color: #ffb6c1; /* Leichtes Rosa für die Schaltfläche "Zum Warenkorb hinzufügen" */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff809b; /* Dunklere Schattierung beim Hovern */
+  transform: scale(1.05);
+}
+
+.go-to-cart-btn-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.go-to-cart-btn {
+  background-color: #ff9500; /* Orange für die Schaltfläche "Zum Warenkorb" */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-cart-btn:hover {
+  background-color: #ff8200; /* Dunklere Schattierung beim Hovern */
+  transform: scale(1.05);
+}

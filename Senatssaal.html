@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Wegweiser HTW Saar</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- FontAwesome-Bibliothek einbinden -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-x32GXFOB3Ci6oUOW4c8L5GfZWVpmU0MQ7HyBd6z1UknRV+Z5vgfsf8eIFb8e8JU3FjQd9tq6aUg8dkxunHjZWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #bildergalerie {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 2;
+    }
+
+    #bildcontainer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 80%;
+      height: 80vh;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background: #fff;
+    }
+
+    #schließen,
+    #pfeil-links,
+    #pfeil-rechts {
+      position: absolute;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    #schließen {
+      top: 10px;
+      right: 10px;
+    }
+
+    #pfeil-links,
+    #pfeil-rechts {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #pfeil-links {
+      left: 10px;
+    }
+
+    #pfeil-rechts {
+      right: 10px;
+    }
+
+    #bilder {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; 
+      display: block;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      align-items: center; 
+    }
+
+    .header {
+      text-align: center;
+      background-color: #ddd;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1; 
+    }
+
+    .slogan {
+      margin: 0;
+    }
+
+    .navbar {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      color: #555;
+    }
+
+    .image-container {
+      flex: 1;
+      order: 1;
+      max-width: 50%;
+    }
+
+    .text-container {
+      flex: 1;
+      order: 2;
+      max-width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    button {
+      order: 3;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Zentriert horizontal */
+      height: 100vh; /* 100% der Bildschirmhöhe */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+
+    #startseite-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ddd;
+      padding: 1px;
+      border: none;
+      cursor: pointer;
+	  width: 350px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="search-bar">
+    <input id="searchInput" type="text" placeholder="Suche..." onkeypress="handleSearch(event)">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <button id="startseite-btn" onclick="navigateToStartseite()">zurück zur Startseite</button>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="slogan"> Wegweiser des Campus Rotenbühl</h1>
+      <nav class="navbar">
+        <ul>
+          <li><a href="gebäude a.html">Geb&auml;ude A</a></li>
+          <li><a href="gebäude b.html">Geb&auml;ude B</a></li>
+          <li><a href="gebäude c.html">Geb&auml;ude C</a></li>
+          <li><a href="gebäude d.html">Geb&auml;ude D</a></li>
+          <li><a href="gebäude e.html">Geb&auml;ude E</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="image-container">
+        <img src="senatssaal.jpeg" alt="Senatssaal">
+      </div>
+      <div class="text-container">
+	  <h1>Senatssaal</h1>
+        <p>
+          Der Senatssaal ist Austragungsort verschiedener Veranstaltungen. Abgesehen davon wird der Saal, gemeinsam mit dem gesamten D-Gebäude eher wenig benutzt.
+        </p>
+		<p>Der Senatssaal ist im Erdgeschoss des D-Gebäudes untergebracht. Um dorthin zu gelangen, nutzen Sie den Durchgang zwischen Gebäude C und D oder gehen sie über den Innenhof ins Gebäude E und dann nach rechts.
+		</p>
+		<p>
+		</p>
+        <button onclick="zeigeBildergalerie()">Bildliche Wegbeschreibung anzeigen</button>
+        <div id="bildergalerie">
+          <div id="bildcontainer">
+            <span id="schließen" onclick="schließeBildergalerie()">×</span>
+            <div id="pfeil-links" onclick="zeigeVorherigesBild()">‹</div>
+            <img id="bilder" src="gang c zu d.jpeg" alt="Bild 1">
+            <div id="pfeil-rechts" onclick="zeigeNächstesBild()">›</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 NaWiWi | Kontakt: info@nawiwi-htwsaar.de</p>
+    </div>
+  </footer>
+
+  <script>
+    let aktuellesBildIndex = 0;
+    const bilder = ["gang c zu d.jpeg", "senatssaal.jpeg"]; // Füge hier die Bild-Dateinamen hinzu
+
+    function zeigeBildergalerie() {
+      document.getElementById('bildergalerie').style.display = 'block';
+    }
+
+    function schließeBildergalerie() {
+      document.getElementById('bildergalerie').style.display = 'none';
+    }
+
+    function zeigeVorherigesBild() {
+      if (aktuellesBildIndex > 0) {
+        aktuellesBildIndex--;
+      } else {
+        aktuellesBildIndex = bilder.length - 1;
+      }
+      aktualisiereBild();
+    }
+
+    function zeigeNächstesBild() {
+      if (aktuellesBildIndex < bilder.length - 1) {
+        aktuellesBildIndex++;
+      } else {
+        aktuellesBildIndex = 0;
+      }
+      aktualisiereBild();
+    }
+
+    function aktualisiereBild() {
+      document.getElementById('bilder').src = bilder[aktuellesBildIndex];
+    }
+
+    function navigateToStartseite() {
+      window.location.href = "startseite.html"; // Ersetze "startseite.html" durch den tatsächlichen Dateinamen der Startseite
+    }
+  </script>
+
+  <script>
+    function handleSearch(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        const searchInput = document.getElementById("searchInput").value.toLowerCase();
+        if (searchInput === "bibliothek") {
+          window.location.href = "bibliothek.html";
+        } else if (searchInput === "mensa") {
+          window.location.href = "mensa.html";
+        } else if (searchInput === "sekretariat") {
+          window.location.href = "sekretariat.html";
+        } else if (searchInput === "it-service") {
+          window.location.href = "it-service.html";
+        } else if (searchInput === "fachschaft") {
+          window.location.href = "fachschaft.html";
+        } else if (searchInput === "druckerraum") {
+          window.location.href = "druckerraum.html";
+        } else if (searchInput === "validierungsautomat") {
+          window.location.href = "validierungsautomat.html";
+        } else if (searchInput === "orientierungsplan") {
+          window.location.href = "orientierungsplan.html";
+        } else {
+          alert("Keine Übereinstimmung gefunden.");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
