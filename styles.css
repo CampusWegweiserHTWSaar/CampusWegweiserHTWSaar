@@ -1,7 +1,7 @@
-/* Font Awesome einbinden */
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-/* Allgemeine Styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -16,7 +16,7 @@ body {
   padding: 20px;
 }
 
-/* Header */
+
 .header {
   background-image: url('CampusRotenbühl.jpeg');
   background-size: cover;
@@ -62,7 +62,7 @@ body {
   background-color: #e69500; /* Dunkleres Orange beim Hover */
 }
 
-/* Dropdown-Menü */
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -107,7 +107,7 @@ body {
   background-color: #f1f1f1;
 }
 
-/* Suchleiste */
+
 .toolbar {
   display: flex;
   align-items: center;
@@ -179,7 +179,7 @@ body {
   padding: 10px 0;
 }
 
-/* Registrierungsformular und Anmeldeformular */
+
 .registration-form,
 .login-form {
   margin: 50px auto;
@@ -235,7 +235,7 @@ body {
   background-color: #e69500;
 }
 
-/* Hinzugefügt: Stil für Anmeldeformular-Felder wie Registrierungsformular-Felder */
+
 .login-form .form-row input[type="text"],
 .login-form .form-row input[type="email"],
 .login-form .form-row input[type="password"] {
@@ -411,14 +411,14 @@ body {
 
 #blumenstraeusse {
   padding: 30px 0;
-  background-color: #f0f0f0; /* Helle Hintergrundfarbe */
-  color: #333; /* Dunklerer Text */
-  text-align: center; /* Zentrierte Ausrichtung des Abschnitts */
+  background-color: #f0f0f0; 
+  color: #333;
+  text-align: center; 
 }
 
 #blumenstraeusse h2 {
-  font-weight: bold; /* Dicker Text für die Überschrift */
-  color: #555; /* Dunklerer Text */
+  font-weight: bold; 
+  color: #555; 
 
   /* Mehr Farbe hinzugefügt */
   background-image: linear-gradient(to right, #ff5b94, #ffc03d, #9dff69);
@@ -564,7 +564,7 @@ body {
   margin: 0 auto;
 }
 
-/* Stile für das Feld der telefonischen Bestellung */
+
 
 #telefonische-bestellung {
   background-color: #f2f2f2;
